@@ -20,14 +20,12 @@ private:
 <<<<<<< HEAD
 
 public:
-    // Function declarations
-    void inputInfo() override;       // Polymorphism
-    void displayInfo() override;     // Polymorphism
+   
+    void inputInfo() override;       
+    void displayInfo() override;     
 
-    // Getter function
     int getDoctorID() const;
 
-    // For file handling (later in .cpp)
 =======
 public:
     void inputInfo() override;     
