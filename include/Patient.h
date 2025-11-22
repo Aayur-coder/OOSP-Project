@@ -13,18 +13,14 @@ private:
 
 public:
     Patient();
-    // Overridden methods
     void inputInfo() override;
-    void displayInfo() const override;   // MUST be const
+    void displayInfo() const override;  
 
-    // Getters
     int getPatientID() const;
     int getAssignedDoctorID() const;
 
-    // Setter
     void setAssignmentDoctorID(int id);
 
-    // File handling
     string toFileString() const;
     void fromFileString(const string& line);
 };

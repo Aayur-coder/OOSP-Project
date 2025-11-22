@@ -56,14 +56,12 @@ void HospitalManagement::searchDoctorByID() const {
     cout << "\nDoctor not found!\n";
 }
 
-//PATIENT FUNCTIONS 
 
 void HospitalManagement::addPatient() {
     Patient p;
     cout << "\nAssigning Patient ID: " << nextPatientID << endl;
     p.inputInfo();
 
-    // Replace ID inside toFileString
     string data = p.toFileString();
     data = to_string(nextPatientID) + data.substr(data.find('|'));
 
@@ -107,8 +105,7 @@ void HospitalManagement::assignDoctorToPatient() {
     cout << "Enter Doctor ID: ";
     int did;
     cin >> did;
-
-    // Check if patient exists
+    //to check if patient exists.
     bool patientFound = false;
     for (auto& p : patients) {
         if (p.getPatientID() == pid) {
@@ -138,7 +135,6 @@ void HospitalManagement::assignDoctorToPatient() {
     if (!patientFound) cout << "\nError: Patient ID does not exist!\n";
 }
 
-// ------------------- APPOINTMENT FUNCTIONS -------------------
 
 void HospitalManagement::createAppointment() {
     cout << "\nEnter Doctor ID: ";
@@ -149,7 +145,6 @@ void HospitalManagement::createAppointment() {
     int pid;
     cin >> pid;
 
-    // Validate both IDs
     bool doctorExists = false, patientExists = false;
 
     for (auto& d : doctors)
@@ -185,7 +180,6 @@ void HospitalManagement::listAppointments() const {
         a.displayAppointment();
 }
 
-// ------------------- FILE HANDLING -------------------
 
 void HospitalManagement::saveDoctorsToFile(const string& filename) const {
     ofstream file(filename);
@@ -238,7 +232,6 @@ void HospitalManagement::loadAppointmentsFromFile(const string& filename) {
     }
 }
 
-// ------------------- MENUS -------------------
 
 void HospitalManagement::manageDoctors() {
     int choice;

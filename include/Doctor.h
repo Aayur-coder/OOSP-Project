@@ -13,17 +13,13 @@ private:
     string availability;
 
 public:
-    // Constructor
     Doctor();
 
-    // Overridden functions (with const!)
     void inputInfo() override;
     void displayInfo() const override;
 
-    // Getter
     int getDoctorID() const;
 
-    // File handling helpers
     string toFileString() const;
     void fromFileString(const string& line);
 };
