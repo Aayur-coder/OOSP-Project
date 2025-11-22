@@ -13,14 +13,17 @@ private:
     string availability;
 
 public:
-    // Function declarations
-    void inputInfo() override;       // Polymorphism
-    void displayInfo() override;     // Polymorphism
+    // Constructor
+    Doctor();
 
-    // Getter function
+    // Overridden functions (with const!)
+    void inputInfo() override;
+    void displayInfo() const override;
+
+    // Getter
     int getDoctorID() const;
 
-    // For file handling (later in .cpp)
+    // File handling helpers
     string toFileString() const;
     void fromFileString(const string& line);
 };

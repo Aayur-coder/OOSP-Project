@@ -28,7 +28,7 @@ void Doctor::inputInfo() {
     cout << "Enter Availability (e.g., 9AM-5PM): ";
     getline(cin, availability);
 }
-void Doctor::displayInfo() {
+void Doctor::displayInfo() const {
     cout << "\n--- Doctor Details ---\n";
     cout << "Doctor ID: " << doctorID << "\n";
     cout << "Name: " << name << "\n";

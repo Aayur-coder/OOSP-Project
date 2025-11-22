@@ -31,7 +31,7 @@ using namespace std;
     cin >> assignedDoctorID;
 }
 
- void Patient::displayInfo() {
+ void Patient::displayInfo() const{
     cout << "\n--- Patient Details ---\n";
     cout << "Patient ID: " << patientID << "\n";
     cout << "Name: " << name << "\n";

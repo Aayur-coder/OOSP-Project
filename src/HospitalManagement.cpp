@@ -4,7 +4,6 @@
 #include <stdexcept>
 using namespace std;
 
-// Constructor: initialize next IDs and load past data
 HospitalManagement::HospitalManagement() {
     nextDoctorID = 101;
     nextPatientID = 201;
@@ -15,16 +14,14 @@ HospitalManagement::HospitalManagement() {
     loadAppointmentsFromFile("appointments.txt");
 }
 
-// ------------------- DOCTOR FUNCTIONS -------------------
 
 void HospitalManagement::addDoctor() {
     Doctor d;
     cout << "\nAssigning Doctor ID: " << nextDoctorID << endl;
     d.inputInfo();
 
-    // overwrite the ID to keep consistent numbering
     string data = d.toFileString();
-    // format: 0|name|age|gender|spec|availability → replace 0 with nextDoctorID
+
     data = to_string(nextDoctorID) + data.substr(data.find('|'));
 
     Doctor finalDoctor;
@@ -42,7 +39,7 @@ void HospitalManagement::listDoctors() const {
         cout << "\nNo doctors available.\n";
         return;
     }
-    displayList(doctors);   // TEMPLATE FUNCTION
+    displayList(doctors);   
 }
 
 void HospitalManagement::searchDoctorByID() const {
@@ -59,7 +56,7 @@ void HospitalManagement::searchDoctorByID() const {
     cout << "\nDoctor not found!\n";
 }
 
-// ------------------- PATIENT FUNCTIONS -------------------
+//PATIENT FUNCTIONS 
 
 void HospitalManagement::addPatient() {
     Patient p;

@@ -3,25 +3,31 @@
 
 #include "Person.h"
 #include <string>
-using std :: string ;
-class Patient : public Person{//The person class is inherited from patient.
-    private :
+using std::string;
 
-    int patientID ;
-    string disease ;
-    int assignedDoctorID ;
-    public : 
+class Patient : public Person {   // Patient inherits from Person
+private:
+    int patientID;
+    string disease;
+    int assignedDoctorID;
 
-    void inputInfo () override ;
-    void displayInfo () override ;
+public:
+    Patient();
+    // Overridden methods
+    void inputInfo() override;
+    void displayInfo() const override;   // MUST be const
 
-    int getPatientID () const ;
-    int getAssignedDoctorID () const ;
+    // Getters
+    int getPatientID() const;
+    int getAssignedDoctorID() const;
 
-    void setAssignmentDoctorID (int id) ;
+    // Setter
+    void setAssignmentDoctorID(int id);
 
-    string toFileString () const ;
-    void fromFileString (const string& line) ;
-} ;
+    // File handling
+    string toFileString() const;
+    void fromFileString(const string& line);
+};
+
 #endif
 
