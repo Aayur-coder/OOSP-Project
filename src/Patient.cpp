@@ -4,7 +4,7 @@
 #include <limits> 
 using namespace std;
 
-Patient::Patient() {
+Patient::Patient() {//Constructor.
     patientID = 0;
     assignedDoctorID = 0;
     disease = "";
