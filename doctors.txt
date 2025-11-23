@@ -1,1 +1,2 @@
-101|aayur|18|male|dermatologist|3PM-6PM
+102|aayur |19|male |neuro |9 -11 am 
+104|saksham|20|male|neuro|9-11

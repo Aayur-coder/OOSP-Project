@@ -9,8 +9,10 @@ using std::string;
 class Doctor : public Person {
 private:
     int doctorID;
-    string specialization;
+    // 📢 THESE LINES MUST BE PRESENT IN DOCTOR.H:
+    string specialization; 
     string availability;
+    // ---------------------------------------------
 
 public:
     Doctor();
@@ -19,6 +21,7 @@ public:
     void displayInfo() const override;
 
     int getDoctorID() const;
+    void setDoctorID(int id); 
 
     string toFileString() const;
     void fromFileString(const string& line);

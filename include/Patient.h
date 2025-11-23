@@ -20,6 +20,7 @@ public:
     int getAssignedDoctorID() const;
 
     void setAssignmentDoctorID(int id);
+    void setPatientID(int id);
 
     string toFileString() const;
     void fromFileString(const string& line);

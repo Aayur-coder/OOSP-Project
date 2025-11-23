@@ -6,6 +6,7 @@
 #include "Appointment.h"
 #include <vector>
 #include <string>
+#include <map> // Required for map/set to store available IDs
 using std::vector;
 using std::string;
 
@@ -14,10 +15,14 @@ class HospitalManagement {
     vector <Doctor> doctors ;
     vector <Patient> patients ;
     vector <Appointment> appointments ;
+    
 
-    int nextDoctorID ;
+    int nextDoctorID ; // The ID to be automatically assigned to the next doctor
     int nextPatientID ;
     int nextAppointmentID ;
+    int findSmallestAvailableID() const;
+    int findSmallestAvailablePatientID() const;
+    
     
     public : 
     HospitalManagement () ;
@@ -29,6 +34,8 @@ class HospitalManagement {
     void addDoctor();
     void listDoctors() const;
     void searchDoctorByID() const;
+    void deleteDoctorByID();
+    bool isDoctorCaseloadFull(int doctorID, int maxPatients = 3) const;
 
     
     void managePatients();
@@ -36,6 +43,7 @@ class HospitalManagement {
     void listPatients() const;
     void searchPatientByID() const;
     void assignDoctorToPatient();
+    void deletePatientByID();
 
    
     void manageAppointments();
@@ -44,7 +52,7 @@ class HospitalManagement {
 
     
     void saveDoctorsToFile(const string& filename) const;
-    void loadDoctorsFromFile(const string& filename);
+    void loadDoctorsFromFile(const string& filename); // Must update nextDoctorID here
 
     void savePatientsToFile(const string& filename) const;
     void loadPatientsFromFile(const string& filename);
