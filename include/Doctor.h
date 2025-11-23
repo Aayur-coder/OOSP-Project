@@ -5,14 +5,11 @@
 #include <string>
 using std::string;
 
-// Doctor class inherits from Person
 class Doctor : public Person {
 private:
     int doctorID;
-    // 📢 THESE LINES MUST BE PRESENT IN DOCTOR.H:
     string specialization; 
     string availability;
-    // ---------------------------------------------
 
 public:
     Doctor();

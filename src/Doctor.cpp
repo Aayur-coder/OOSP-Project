@@ -10,21 +10,15 @@ Doctor::Doctor() {
     availability = "";
 }
 
-// Input function (ID input removed, as management class handles it)
 void Doctor::inputInfo() {
-    // Note: Removed lines for Doctor ID input.
-    // The ID is now set by the HospitalManagement::addDoctor method via setDoctorID().
 
-    // Clear buffer after previous cin operation (e.g., from menu choice)
     cin.ignore();  
     
     cout << "Enter Name: ";
     getline(cin, name);
 
     cout << "Enter Age: ";
-    // Use >> for age
     cin >> age;
-    // Clear buffer after cin >> age
     cin.ignore(); 
 
     cout << "Enter Gender: ";
@@ -37,30 +31,24 @@ void Doctor::inputInfo() {
     getline(cin, availability);
 }
 
-// Display function
 void Doctor::displayInfo() const {
     cout << "\n--- Doctor Details ---\n";
     cout << "Doctor ID: " << doctorID << "\n";
-    // Inherited from Person:
     cout << "Name: " << name << "\n";
     cout << "Age: " << age << "\n";
     cout << "Gender: " << gender << "\n";
-    // Doctor members:
     cout << "Specialization: " << specialization << "\n";
     cout << "Availability: " << availability << "\n";
 }
 
-// Getter for ID
 int Doctor::getDoctorID() const {
     return doctorID;
 }
 
-// Setter for ID (Added for HospitalManagement to assign ID)
 void Doctor::setDoctorID(int id) {
     doctorID = id;
 }
 
-// Serialization
 string Doctor::toFileString() const {
     stringstream ss;
     ss << doctorID << "|" << name << "|" << age << "|" << gender
@@ -68,7 +56,6 @@ string Doctor::toFileString() const {
     return ss.str();
 }
 
-// Deserialization
 void Doctor::fromFileString(const string& line) {
     stringstream ss(line);
     string token;
@@ -86,4 +73,3 @@ void Doctor::fromFileString(const string& line) {
     getline(ss, availability, '|');
 }
 
-// Ensure there are NO extra braces or code after this line.

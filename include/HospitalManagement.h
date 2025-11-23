@@ -6,7 +6,7 @@
 #include "Appointment.h"
 #include <vector>
 #include <string>
-#include <map> // Required for map/set to store available IDs
+#include <map>
 using std::vector;
 using std::string;
 
@@ -17,7 +17,7 @@ class HospitalManagement {
     vector <Appointment> appointments ;
     
 
-    int nextDoctorID ; // The ID to be automatically assigned to the next doctor
+    int nextDoctorID ; 
     int nextPatientID ;
     int nextAppointmentID ;
     int findSmallestAvailableID() const;
