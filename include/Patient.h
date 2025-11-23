@@ -7,7 +7,7 @@ using std::string;
 
 class Patient : public Person {   // Patient inherits from Person
 private:
-    int patientID;
+    int patientID;//Unique for every patient
     string disease;
     int assignedDoctorID;
 
