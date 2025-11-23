@@ -7,7 +7,7 @@ using std::string;
 // Abstract base class
 class Person {
 protected:
-    string name;
+    string name;//Name of anyone including doctor , patient.
     int age;
     string gender;
 
